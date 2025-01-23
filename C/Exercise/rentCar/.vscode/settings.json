@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "noleggioutils.h": "c",
+        "stdio.h": "c",
+        "string.h": "c"
+    }
+}
