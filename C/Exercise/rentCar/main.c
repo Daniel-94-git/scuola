@@ -1,105 +1,138 @@
 #include <stdio.h>
-#include <string.h>
-#include "noleggioUtils.c"
+#include "noleggio.h"
 
-// STRUTTURA BASE PER RACCOLTA DATI
-
-typedef struct SelezioneCliente
-{
-    char modello[15];
-    char motorizzazione[15];
-    int giorni;
-}Selection;
 
 int main()
 {
 
-    // Variabili 
+    int sceltaMenu;
+    int loggato;
+    int azioneDaMenu;
+    int tempoNoleggio;
+    int kmPercorsi;
+    int tariffaKm = 1;
+    int costoNoleggio;
+    int costoFissoKm = 50;
+    int flag = 0;
 
-    int run_program = 1;
-    char utente_scelta;
-    int registrato;
-    char accesso = 'L';
-    char visita = 'S';
-    char uscita = '0';
-    char restituzione = 'R'; 
-    int giorni;
-
-
-    // Login e visualizzazione menu
-
-    printf("----------------- WELCOME TO RENT CARS -----------------\n");
-
-    while (run_program == 1)
+    while (flag == 0)
     {
-        // CREO STRUTTURA PERSONALIZZATA "SELECTION"
-
-        struct SelezioneCliente selection;
-
-        printf("[L] per il login altrimenti\n[S] per consultare i modelli\n[R] per riconsegnare un auto\n[0] per uscire\n");
-        scanf("%c", &utente_scelta);
-
-        if (utente_scelta == accesso)
-        {
-
-            // LOGIN HARDCODED CON "CONTROLLO"
-
-            registrato = login();
-            if(registrato == 2){
-                break;
-            }
-
-            // LANCIO FUNZIONE PER SCELTA MODELLO CON "CONTROLLO"
-
-            char *modello_scelto = visualizzaAuto();
-            if (modello_scelto == NULL)
-            {
-                break;
-            }
-            printf("Hai scelto: %s\n", modello_scelto);
-
-            // LANCIO FUNZIONE PER SCELTA MOTORIZZAZIONE CON "CONTROLLO"
-
-            char*motorizzazione_scelta = visualizzaMotorizzazioni(modello_scelto);
-            if (motorizzazione_scelta == NULL)
-            {
-                break;
-            }
-            printf("Hai scelto: %s\n",motorizzazione_scelta);
-            
-            // LANCIO FUNZIONE PER RACCOGLIERE GIORNI CON "CONTROLLO"
-
-            giorni = f_giorni();
-
-            // INSERISCO GLI ELEMENTI NELLA STRUTTURA 
-
-            strcpy(selection.modello,modello_scelto);
-            strcpy(selection.motorizzazione,motorizzazione_scelta); // Non riesco a passare la struttura nella funzione
-            selection.giorni = giorni;
-
-            // LANCIO FUNZIONE PER CALCOLO COSTO NOLEGGIO
-
-            int costo_totale = calcolaNoleggioGiornaliero(modello_scelto,motorizzazione_scelta,giorni);
-            printf("Il costo totale del noleggio : %d euro\n",costo_totale);
-            printf("------------------------------------------------------------------\n");
-        }
-        else if (utente_scelta == visita)
-        {
-            lista_modelli_motorizzazioni();
-        }
-        else if (utente_scelta == restituzione)
-        {
-            float costo_totale;
-            costo_totale = restituizione();
-            printf("Il noleggio ha un costo totale di : %.2f euro\n", costo_totale);
-            printf("------------------------------------------------------------------\n");
-        }
-        else if (utente_scelta == uscita)
+        sceltaMenu = menu();
+        // Uscita dal programma
+        if (sceltaMenu == 0)
         {
             printf("Arrivederci!\n");
-            run_program = 0;
+            flag = 1;
+        }
+
+        // Procedura di login
+        else if (sceltaMenu == 1)
+        {
+            loggato = login();
+            if (loggato == 1)
+            {
+                azioneDaMenu = azioneUtente();
+
+                if (azioneDaMenu == 1)
+                {
+
+                    char *marcaScelta = sceltaMarca();
+                    char *motorizzazioneScelta = sceltaMotorizzazione(marcaScelta);
+                    tempoNoleggio = giorniNoleggio();
+                    kmPercorsi = kmDaPercorrere(tariffaKm);
+                    printf("%s\n", motorizzazioneScelta);
+                    printf("%d\n", tempoNoleggio);
+                    costoNoleggio = calcoloNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoFissoKm);
+                    riepilogoNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoNoleggio);
+                    flag = 0;
+                }
+                else if ((azioneDaMenu == 2))
+                {
+                    char *marcaScelta = sceltaMarca();
+                    char *motorizzazioneScelta = sceltaMotorizzazione(marcaScelta);
+                    tempoNoleggio = giorniNoleggio();
+                    kmPercorsi = kmGiaPercorsi();
+                    costoNoleggio = calcoloNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoFissoKm);
+                    riepilogoNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoNoleggio);
+                    flag = 0;
+                }
+                else if (azioneDaMenu == 0)
+                {
+                    printf("Arriverderci!\n");
+                    flag = 1;
+                }
+                
+            }
+
+            else if (loggato == 0)
+            {
+                printf("Alla prossima volta.\n");
+                flag = 1; // esce dal programma definitivamente
+            }
+        }
+
+        else if (sceltaMenu == 2)
+        {
+            listaMarche(); // modalità visisatore
+            listaMotorizzazioni();
         }
     }
+    /////////////////////////////////////////////////
+    /*
+        sceltaMenu = menu();
+        // Uscita dal programma
+        if (sceltaMenu == 0)
+        {
+            printf("Arrivederci!\n");
+        }
 
+        // Procedura di login
+        else if (sceltaMenu == 1)
+        {
+            loggato = login();
+            if (loggato == 1)
+            {
+                azioneDaMenu = azioneUtente();
+
+                if (azioneDaMenu == 1)
+                {
+
+                    char *marcaScelta = sceltaMarca();
+                    char *motorizzazioneScelta = sceltaMotorizzazione(marcaScelta);
+                    tempoNoleggio = giorniNoleggio();
+                    kmPercorsi = kmDaPercorrere(tariffaKm);
+                    printf("%s\n", motorizzazioneScelta);
+                    printf("%d\n", tempoNoleggio);
+                    costoNoleggio = calcoloNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoFissoKm);
+                    riepilogoNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoNoleggio);
+
+
+                    return 0;
+                }
+                else if ((azioneDaMenu == 2))
+                {
+                    char *marcaScelta = sceltaMarca();
+                    char *motorizzazioneScelta = sceltaMotorizzazione(marcaScelta);
+                    tempoNoleggio = giorniNoleggio();
+                    kmPercorsi = kmGiaPercorsi();
+                    costoNoleggio = calcoloNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoFissoKm);
+                    riepilogoNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoNoleggio);
+                }
+
+            }
+
+            else if (loggato == 0)
+            {
+                printf("Alla prossima volta.\n");
+                return 0; // esce dal programma definitivamente
+            }
+        }
+
+        else if (sceltaMenu == 2)
+        {
+            listaMarche(); // modalità visisatore
+            listaMotorizzazioni();
+        }
+    */
     return 0;
 }
