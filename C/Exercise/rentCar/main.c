@@ -77,62 +77,6 @@ int main()
             listaMotorizzazioni();
         }
     }
-    /////////////////////////////////////////////////
-    /*
-        sceltaMenu = menu();
-        // Uscita dal programma
-        if (sceltaMenu == 0)
-        {
-            printf("Arrivederci!\n");
-        }
 
-        // Procedura di login
-        else if (sceltaMenu == 1)
-        {
-            loggato = login();
-            if (loggato == 1)
-            {
-                azioneDaMenu = azioneUtente();
-
-                if (azioneDaMenu == 1)
-                {
-
-                    char *marcaScelta = sceltaMarca();
-                    char *motorizzazioneScelta = sceltaMotorizzazione(marcaScelta);
-                    tempoNoleggio = giorniNoleggio();
-                    kmPercorsi = kmDaPercorrere(tariffaKm);
-                    printf("%s\n", motorizzazioneScelta);
-                    printf("%d\n", tempoNoleggio);
-                    costoNoleggio = calcoloNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoFissoKm);
-                    riepilogoNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoNoleggio);
-
-
-                    return 0;
-                }
-                else if ((azioneDaMenu == 2))
-                {
-                    char *marcaScelta = sceltaMarca();
-                    char *motorizzazioneScelta = sceltaMotorizzazione(marcaScelta);
-                    tempoNoleggio = giorniNoleggio();
-                    kmPercorsi = kmGiaPercorsi();
-                    costoNoleggio = calcoloNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoFissoKm);
-                    riepilogoNoleggio(marcaScelta, motorizzazioneScelta, tempoNoleggio, kmPercorsi, costoNoleggio);
-                }
-
-            }
-
-            else if (loggato == 0)
-            {
-                printf("Alla prossima volta.\n");
-                return 0; // esce dal programma definitivamente
-            }
-        }
-
-        else if (sceltaMenu == 2)
-        {
-            listaMarche(); // modalità visisatore
-            listaMotorizzazioni();
-        }
-    */
     return 0;
 }
