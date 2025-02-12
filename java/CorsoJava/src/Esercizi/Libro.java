@@ -15,6 +15,14 @@ public class Libro {
 
     }
 
+    public void stampaDettagli(String titolo, String autore, int annoPubblicazione){
+
+        System.out.println(titolo);
+        System.out.println(autore);
+        System.out.println(annoPubblicazione);
+
+    }
+
     public String getTitolo() {
         return titolo;
     }
@@ -39,11 +47,5 @@ public class Libro {
         this.annoPubblicazione = annoPubblicazione;
     }
 
-    public void stampaDettagli(String titolo, String autore, int annoPubblicazione){
 
-        System.out.println(titolo);
-        System.out.println(autore);
-        System.out.println(annoPubblicazione);
-
-    }
 }

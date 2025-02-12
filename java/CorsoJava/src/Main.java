@@ -25,6 +25,8 @@ public class Main {
 
 */
 
+        // GESTIONE CLASSE LIBRO
+
         Libro primoVolume = new Libro("Antifragile","Nassim Taleb",2018);
         Libro secondoVolume = new Libro("Cigno Nero","Nassim Taleb",2005);
 
@@ -47,6 +49,7 @@ public class Main {
         System.out.println("\n");
         secondoVolume.stampaDettagli(secondoVolume.getTitolo(), secondoVolume.getAutore(), secondoVolume.getAnnoPubblicazione());
 
+        // GESTIONE CLASSE CALCOLATRICE
 
         Calcolatrice calc = new Calcolatrice(5,5);
         int som = calc.mSomma(calc.getNumero1(), calc.getNumero2());
