@@ -23,29 +23,6 @@ public class Main {
         Animale pluto = new Animale("pluto",10,100,false);
         System.out.println(pluto);
 
-        AutoMobile Daniel = new AutoMobile("Subaru","Impreza","Benzina",25.50);
-        System.out.println("L'oggetto AutoMobile di nome Daniel contiene i seguenti valori :");
-        System.out.println(("Marca: " + Daniel.getMarca()));
-        System.out.println("Modello: " + Daniel.getModello());
-        System.out.println("Motorizzazione: " + Daniel.getMotorizzazione());
-        System.out.println("Prezzo al giorno: " + Daniel.getPrezzoNoleggio() + " Euro");
-
-        Daniel.setModello("Impreza XS");
-        System.out.println(("Modello: " + Daniel.getModello()));
-
-        AutoMobile Noemi = new AutoMobile("Fiat","Topolino","Piedini",0.5);
-        System.out.println("L'oggetto AutoMobile di nome Noemi contiene i seguenti valori :");
-        System.out.println(("Marca: " + Noemi.getMarca()));
-        System.out.println("Modello: " + Noemi.getModello());
-        System.out.println("Motorizzazione: " + Noemi.getMotorizzazione());
-        System.out.println("Prezzo al giorno: " + Noemi.getPrezzoNoleggio() + " Euro");
-
-        Daniel.setModello("Topolino XS");
-        System.out.println(("Modello: " + Noemi.getModello()));
-
-        Noemi.Copertura(true);
-
-        System.out.println("Copertura: " );
 */
 
         Libro primoVolume = new Libro("Antifragile","Nassim Taleb",2018);
