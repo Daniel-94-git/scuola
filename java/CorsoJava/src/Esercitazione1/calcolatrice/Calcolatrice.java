@@ -1,4 +1,4 @@
-package Esercizi;
+package Esercitazione1.calcolatrice;
 
 public class Calcolatrice {
     //private int numero1;
