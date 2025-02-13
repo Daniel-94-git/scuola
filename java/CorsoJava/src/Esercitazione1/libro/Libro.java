@@ -1,4 +1,4 @@
-package Esercizi;
+package Esercitazione1.libro;
 
 
 public class Libro {
@@ -7,7 +7,7 @@ public class Libro {
     private String autore;
     private int annoPubblicazione;
 
-    public  Libro (String titolo,String autore, int annoPubblicazione){
+    public Libro(String titolo, String autore, int annoPubblicazione){
 
         this.autore = autore;
         this.titolo = titolo;
@@ -15,11 +15,11 @@ public class Libro {
 
     }
 
-    public void stampaDettagli(String titolo, String autore, int annoPubblicazione){
+    public void stampaDettagli(){
 
-        System.out.println(titolo);
-        System.out.println(autore);
-        System.out.println(annoPubblicazione);
+        System.out.println(this.titolo);
+        System.out.println(this.autore);
+        System.out.println(this.annoPubblicazione);
 
     }
 
