@@ -1,60 +1,64 @@
 package Esercizi;
 
 public class Calcolatrice {
+    //private int numero1;
+    //private int numero2;
+    private int risultatoSomma;
+    private int risultatoMultiplicazione;
+    private int numeroTasti;
+    private String marcaCalcolatrice;
 
-    private int numero1;
-    private int numero2;
-
-
-
-    public Calcolatrice(int numero1,int numero2){
-
-        this.numero1 = numero1;
-        this.numero2 = numero2;
-
+    public Calcolatrice(int numeroTasti, String marcaCalcolatrice) {
+        this.numeroTasti = numeroTasti;
+        this.marcaCalcolatrice = marcaCalcolatrice;
     }
 
-    public int mSomma(int numero1,int numero2){
-
-        int somma = numero1 +numero2;
-        return  somma;
-
+    public int getRisultatoSomma() {
+        return risultatoSomma;
     }
 
-
-    public  int mul(int numero1,int numero2){
-
-        int mul = numero1 * numero2;
-        return  mul;
+    public int getRisultatoMultiplicazione() {
+        return risultatoMultiplicazione;
     }
 
-    public void stampaRsultati(int numero1,int numero2){
-
-        int sum = mSomma(numero1,numero2);
-        System.out.println("Somma : ");
-        System.out.println(sum);
-        int mol = mul(numero1,numero2);
-        System.out.println("Moltiplicazione : ");
-        System.out.println(mol);
-        
-
-
-
+    public int getNumeroTasti() {
+        return numeroTasti;
     }
 
-    public int getNumero1() {
-        return numero1;
+    public void setNumeroTasti(int numeroTasti) {
+        this.numeroTasti = numeroTasti;
     }
 
-    public void setNumero1(int numero1) {
-        this.numero1 = numero1;
+    public String getMarcaCalcolatrice() {
+        return marcaCalcolatrice;
     }
 
-    public int getNumero2() {
-        return numero2;
+    public void setMarcaCalcolatrice(String marcaCalcolatrice) {
+        this.marcaCalcolatrice = marcaCalcolatrice;
     }
 
-    public void setNumero2(int numero2) {
-        this.numero2 = numero2;
+    public int somma(int numero1, int numero2) {
+        risultatoSomma = numero1 + numero2;
+        return risultatoSomma;
+    }
+
+    public int moltiplicazione(int numero1, int numero2) {
+        risultatoMultiplicazione = numero1 * numero2;
+        return risultatoMultiplicazione;
+    }
+
+    public void stampaRisultati() {
+        System.out.println("Risultato somma: " + getRisultatoSomma());
+        System.out.println("Risulato moltiplicazione: " + getRisultatoMultiplicazione());
+    }
+
+    @Override
+    public String toString() {
+        return "Calcolatrice{" +
+                "risultatoSomma=" + risultatoSomma +
+                ", risultatoMultiplicazione=" + risultatoMultiplicazione +
+                ", numeroTasti=" + numeroTasti +
+                ", marcaCalcolatrice='" + marcaCalcolatrice + '\'' +
+                '}';
     }
 }

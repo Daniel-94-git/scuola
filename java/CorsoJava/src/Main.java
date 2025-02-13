@@ -25,46 +25,15 @@ public class Main {
 
 */
 
-        // GESTIONE CLASSE LIBRO
+        // Calcolatrice
+        Calcolatrice casio = new Calcolatrice(50,"Casio");
+        casio.somma(10,20);
+        System.out.println(casio.getRisultatoSomma());
+        casio.moltiplicazione(10,20);
 
-        Libro primoVolume = new Libro("Antifragile","Nassim Taleb",2018);
-        Libro secondoVolume = new Libro("Cigno Nero","Nassim Taleb",2005);
+        casio.stampaRisultati();
+        System.out.println(casio);
 
-
-        primoVolume.stampaDettagli(primoVolume.getTitolo(), primoVolume.getAutore(), primoVolume.getAnnoPubblicazione());
-        System.out.println("\n");
-        secondoVolume.stampaDettagli(secondoVolume.getTitolo(), secondoVolume.getAutore(), secondoVolume.getAnnoPubblicazione());
-
-        primoVolume.setAutore("Pippo");
-        primoVolume.setTitolo("Pluto");
-        primoVolume.setAnnoPubblicazione(2020);
-
-        System.out.println("\n");
-        primoVolume.stampaDettagli(primoVolume.getTitolo(), primoVolume.getAutore(), primoVolume.getAnnoPubblicazione());
-
-        secondoVolume.setTitolo("Ciao");
-        secondoVolume.setAutore("Mondo");
-        secondoVolume.setAnnoPubblicazione(1900);
-
-        System.out.println("\n");
-        secondoVolume.stampaDettagli(secondoVolume.getTitolo(), secondoVolume.getAutore(), secondoVolume.getAnnoPubblicazione());
-
-        // GESTIONE CLASSE CALCOLATRICE
-
-        Calcolatrice calc = new Calcolatrice(5,5);
-        int som = calc.mSomma(calc.getNumero1(), calc.getNumero2());
-        int mul = calc.mul(calc.getNumero1(), calc.getNumero2());
-        System.out.println("\n");
-        System.out.println("METODO SOMMA :");
-        System.out.println(som);
-
-        System.out.println("\n");
-        System.out.println("METODO MUL :");
-        System.out.println(mul);
-
-
-        System.out.println("\n");
-        calc.stampaRsultati(calc.getNumero1(), calc.getNumero2());
 
 
     }
