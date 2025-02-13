@@ -2,19 +2,13 @@ package Esercizi;
 
 public class Calcolatrice {
 
-    private int numero1;
-    private int numero2;
+    private int numeroTasti;
+    private String marcaCalcolatrice;
+    private int numeroDispay;
+    private int risulatoSomma;
+    private int
 
-
-
-    public Calcolatrice(int numero1,int numero2){
-
-        this.numero1 = numero1;
-        this.numero2 = numero2;
-
-    }
-
-    public int mSomma(int numero1,int numero2){
+    public int somma(int numero1,int numero2){
 
         int somma = numero1 +numero2;
         return  somma;

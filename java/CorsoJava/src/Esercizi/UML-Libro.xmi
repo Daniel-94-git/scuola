@@ -59,7 +59,7 @@
     <packagedElement xmi:type="uml:Model" xmi:id="Entity_Relationship_Model" name="Entity Relationship Model"/>
   </uml:Model>
   <xmi:Extension extender="umbrello">
-    <docsettings viewid="u0qS6e29dGxqq" documentation="" uniqueid="uPyXgXxhjN58J"/>
+    <docsettings viewid="u0qS6e29dGxqq" documentation="" uniqueid="uhztNQD74kgYh"/>
     <listview>
       <listitem id="Views" type="800" open="1">
         <listitem id="Component_View" type="821" open="1"/>
