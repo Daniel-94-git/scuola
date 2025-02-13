@@ -9,5 +9,6 @@ public class Main {
         erikson.moltiplicazione(10,40);
         System.out.println(erikson.getRisultatoMultiplicazione());
         System.out.println(erikson);
+        erikson.potenzaDiDue(4.2);
     }
 }

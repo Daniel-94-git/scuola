@@ -1,10 +1,10 @@
 package Esercitazione1.calcolatrice;
 
 public class Calcolatrice {
-    //private int numero1;
-    //private int numero2;
+
     private int risultatoSomma;
     private int risultatoMultiplicazione;
+    private double risultatoPotenza;
     private int numeroTasti;
     private String marcaCalcolatrice;
 
@@ -47,9 +47,17 @@ public class Calcolatrice {
         return risultatoMultiplicazione;
     }
 
+    public double potenzaDiDue(double numero){
+
+        risultatoPotenza = numero*numero;
+        System.out.println("La potenza di: " + numero + "  risulta: " + risultatoPotenza);
+
+    }
+
     public void stampaRisultati() {
         System.out.println("Risultato somma: " + getRisultatoSomma());
         System.out.println("Risulato moltiplicazione: " + getRisultatoMultiplicazione());
+
     }
 
     @Override

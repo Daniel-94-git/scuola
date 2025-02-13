@@ -23,6 +23,12 @@ public class Libro {
 
     }
 
+    public void raccontaStoria(){
+
+        System.out.println("C'era una volta un Daniel che ogni tanto sbagliava e non capiva git :(");
+
+    }
+
     public String getTitolo() {
         return titolo;
     }
