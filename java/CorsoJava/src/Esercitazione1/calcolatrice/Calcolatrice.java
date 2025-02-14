@@ -51,6 +51,7 @@ public class Calcolatrice {
 
         risultatoPotenza = numero*numero;
         System.out.println("La potenza di: " + numero + "  risulta: " + risultatoPotenza);
+        return  risultatoPotenza;
 
     }
 
