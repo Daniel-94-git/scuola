@@ -2,12 +2,12 @@ package Esercitazione2_SottoClassi;
 
 // Sottoclasse Camion
 
-class Camion extends Veicolo {
+class Camion_sub extends Veicolo_Master {
 
     private double capacitàCarico;
 
 
-    public Camion(String marca, int anno, double capacitàCarico) {
+    public Camion_sub(String marca, int anno, double capacitàCarico) {
 
         super(marca, anno);
         this.capacitàCarico = capacitàCarico;

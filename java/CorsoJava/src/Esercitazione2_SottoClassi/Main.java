@@ -1,12 +1,10 @@
 package Esercitazione2_SottoClassi;
 
-import Esercitazione1.libro.Libro;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Aereo provaAereo = new Aereo("VOLO", 2025, 50);
+        Aereo_sub provaAereo = new Aereo_sub("VOLO", 2025, 50);
         provaAereo.stampaDettagli();
 
 

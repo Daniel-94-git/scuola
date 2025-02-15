@@ -1,10 +1,10 @@
 package Esercitazione2_SottoClassi;
 
-class Aereo extends Veicolo {
+class Aereo_sub extends Veicolo_Master {
 
     private int numeroPosti ;
 
-    public Aereo(String marca , int anno ,int numeroPosti){
+    public Aereo_sub(String marca , int anno , int numeroPosti){
 
         super(marca, anno);
         this.numeroPosti = numeroPosti;

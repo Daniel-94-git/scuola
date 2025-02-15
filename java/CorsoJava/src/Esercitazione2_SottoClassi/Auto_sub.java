@@ -1,10 +1,10 @@
 package Esercitazione2_SottoClassi;
 
 // Sottoclasse Auto
-class Auto extends Veicolo {
+class Auto_sub extends Veicolo_Master {
     private int numeroPorte;
 
-    public Auto(String marca, int anno, int numeroPorte) {
+    public Auto_sub(String marca, int anno, int numeroPorte) {
         super(marca, anno);
         this.numeroPorte = numeroPorte;
     }
