@@ -11,7 +11,13 @@ public class Main {
         Gesualdo.eat_Food(300);
         Gesualdo.stampaDettagli();
 
+        System.out.println(("\n"));
+        Sub_Cane Pippo = new Sub_Cane(30,4,true,false,8,false);
 
+        Pippo.eat_Food(600);
+        Pippo.coda = false;
+        Pippo.cammina(500);
+        Pippo.stampaDettagli();
 
     }
 }

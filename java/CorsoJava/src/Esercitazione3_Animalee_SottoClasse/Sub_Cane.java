@@ -25,6 +25,13 @@ class Sub_Cane extends Master_Animale {
         return this.fedele;
     }
 
+    protected float cammina(int passi){
+
+        System.out.println("Ha camminato per : " + passi + " passi");
+        this.peso = this.peso - (passi/50);
+        return this.peso;
+    }
+
     protected int regaloGiocattolo(int nuoviGiochi){
 
         System.out.println("Il cane è felice coi suoi giocattoli.");
