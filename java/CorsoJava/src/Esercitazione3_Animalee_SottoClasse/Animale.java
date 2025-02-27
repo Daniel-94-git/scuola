@@ -1,13 +1,13 @@
 package Esercitazione3_Animalee_SottoClasse;
 
-public class Master_Animale {
+public class Animale {
 
     protected float peso;
     protected int numeroZampe;
     protected boolean coda;
     protected boolean bipede;
 
-    public Master_Animale(float peso, int numeroZampe, boolean coda, boolean bipede){
+    public Animale(float peso, int numeroZampe, boolean coda, boolean bipede){
         this.peso = peso;
         this.numeroZampe = numeroZampe;
         this.coda = coda;

@@ -1,11 +1,11 @@
 package Esercitazione3_Animalee_SottoClasse;
 
-class Sub_Cane extends Master_Animale {
+class Cane extends Animale {
 
     private int numeroGiochi;
     private boolean fedele;
 
-    public Sub_Cane(float peso, int numeroZampe, boolean coda, boolean bipede, int numeroGiochi, boolean fedele) {
+    public Cane(float peso, int numeroZampe, boolean coda, boolean bipede, int numeroGiochi, boolean fedele) {
 
         super(peso,numeroZampe,coda,bipede);
         this.numeroGiochi = numeroGiochi;

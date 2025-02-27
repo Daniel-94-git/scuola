@@ -3,7 +3,7 @@ package Esercitazione3_Animalee_SottoClasse;
 public class Main {
     public static void main(String[] args) {
 
-        Sub_Cane Gesualdo = new Sub_Cane(20.50F,4,true,false,20,false);
+        Cane Gesualdo = new Cane(20.50F,4,true,false,20,false);
 
         Gesualdo.nonEretto();
         Gesualdo.isFedele();
@@ -12,7 +12,7 @@ public class Main {
         Gesualdo.stampaDettagli();
 
         System.out.println(("\n"));
-        Sub_Cane Pippo = new Sub_Cane(30,4,true,false,8,false);
+        Cane Pippo = new Cane(30,4,true,false,8,false);
 
         Pippo.eat_Food(600);
         Pippo.coda = false;
