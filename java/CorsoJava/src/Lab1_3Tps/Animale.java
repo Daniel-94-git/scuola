@@ -1,4 +1,4 @@
-package Lab1;
+package Lab1_3Tps;
 
 import java.util.Objects;
 

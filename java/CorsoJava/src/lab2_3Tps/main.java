@@ -1,4 +1,4 @@
-package lab2;
+package lab2_3Tps;
 
 public class main {
 
