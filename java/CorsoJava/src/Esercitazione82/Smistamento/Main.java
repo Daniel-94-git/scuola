@@ -19,7 +19,7 @@ public class Main {
         Stack<Float> listaS = new Stack<>();
 
         // Struttura per bool queue
-        Queue<Boolean> listaQ = new LinkedList<>();
+        Stack<Boolean> listaQ = new Stack<>();
 
         for (int i = 0; i <= 10; i++) {
 
@@ -32,7 +32,7 @@ public class Main {
                 listaS.add(numero);
             } else if (scanner.hasNextBoolean()) {
                 boolean boll = scanner.hasNextBoolean();
-                listaQ.add(boll);
+                listaQ.push(boll);
             } else if (scanner.hasNext()) {
                 String parola = scanner.next();
                 listaL.add(parola);
