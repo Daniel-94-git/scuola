@@ -5,6 +5,8 @@ import pytest
 def test_tensione():
     assert f.tensione(10, 2) == 20
     assert f.tensione(20, 2) == 40
+
+
     
 def test_resistenza():
     assert f.resistenza(10, 2) == 5
